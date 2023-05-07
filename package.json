@@ -6,15 +6,18 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "eslint": "node_modules/.bin/eslint src/",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "stylelint": "stylelint \"**/*.{css,scss}\" ",
+    "stylelint-fix": "stylelint \"**/*.{css,scss}\" --fix",
     "precommit": "lint-staged",
     "preview": "vite preview",
     "prepare": "husky install"
   },
   "lint-staged": {
     "*.{js, jsx,ts,tsx}": [
-      "node_modules/.bin/eslint --max-warnings=0",
       "prettier --write",
+      "stylelint \"**/*.{css,scss}\" --fix",
+      "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
       "git add"
     ]
   },
@@ -44,6 +47,12 @@
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
     "sass": "^1.62.1",
+    "stylelint": "^15.6.1",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-recommended-scss": "^11.0.0",
+    "stylelint-config-standard": "^33.0.0",
+    "stylelint-order": "^6.0.3",
+    "stylelint-scss": "^5.0.0",
     "typescript": "^5.0.2",
     "vite": "^4.3.2"
   }

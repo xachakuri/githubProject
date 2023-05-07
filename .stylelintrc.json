@@ -1,0 +1,21 @@
+{
+    "extends": [
+        "stylelint-config-standard",
+        "stylelint-config-recommended-scss",
+        "stylelint-config-rational-order"
+    ],
+    "plugins": [
+        "stylelint-order",
+        "stylelint-scss",
+        "stylelint-config-rational-order/plugin"
+    ],
+    "rules": {
+        "indentation": "tab",
+        "color-hex-case": "upper",
+        "order/properties-order": [],
+        "plugin/rational-order": [true, {
+            "border-in-box-model": false,
+            "empty-line-between-groups": false
+        }]
+    }
+}
