@@ -1,11 +1,14 @@
-import "./App.css";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 
-function App() {
+import HomePage from "./pages/HomePage";
+
+const App: React.FC = () => {
   return (
-    <div>
-      <p>fsdaf s a fsda f sa dfsa fdsaf fdsa fds sad 123</p>
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+    </Routes>
   );
-}
+};
 
 export default App;
