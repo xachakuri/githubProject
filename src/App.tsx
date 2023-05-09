@@ -1,13 +1,20 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import HomePage from "./pages/HomePage";
+import Header from "./components/Header";
 
-const App: React.FC = () => {
+import HomePage from "./pages/HomePage";
+import FavouritesPage from "./pages/FavouritesPage";
+
+const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-    </Routes>
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/favourites" element={<FavouritesPage />} />
+      </Routes>
+    </>
   );
 };
 
