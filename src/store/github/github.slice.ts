@@ -21,11 +21,10 @@ export const githubSlice = createSlice({
   initialState,
   reducers: {
     addFavourite(state, action: PayloadAction<Repository>) {
-      state.favourites.push(...action.payload);
+      state.favourites.push(action.payload);
       localStorage.setItem(LS_FAV_KEY, JSON.stringify(state.favourites));
     },
     removeFavourite(state, action: PayloadAction<number>) {
-      // eslint-disable-next-line no-param-reassign
       state.favourites = state.favourites.filter(
         (f) => f.id !== action.payload
       );

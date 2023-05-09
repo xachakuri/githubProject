@@ -42,6 +42,13 @@ module.exports = {
                 "ts": "never",
                 "tsx": "never"
             }
-        ]
+        ],
+        "no-param-reassign": [
+            "error",
+            {
+                props: true,
+                ignorePropertyModificationsFor: ["state"],
+            },
+        ],
     }
 }
