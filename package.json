@@ -15,7 +15,8 @@
   },
   "lint-staged": {
     "*.{js, jsx,ts,tsx}": [
-      "prettier --write"
+      "prettier --write",
+      "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
     ]
   },
   "dependencies": {
