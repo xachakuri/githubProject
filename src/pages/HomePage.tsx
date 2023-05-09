@@ -9,7 +9,7 @@ import useDebounce from "../hooks/debounce";
 import RepoCard from "../components/RepoCard";
 
 const HomePage = () => {
-  const [search, setSearch] = useState("xachakuri");
+  const [search, setSearch] = useState("");
   const [dropdown, setDropdown] = useState(false);
   const debounced = useDebounce(search);
   const { data, isError, isLoading } = useSearchUsersQuery(debounced, {
@@ -77,7 +77,11 @@ const HomePage = () => {
         )}
         <div className="container">
           {areReposLoading && <p className="text-center">Loading...</p>}
-          {!areReposLoading && repos && repos.length > 0
+          {!areReposLoading &&
+          repos &&
+          repos.length > 0 &&
+          debounced.length > 3 &&
+          data?.length > 0
             ? [...repos]
                 ?.sort(
                   (a, b) => new Date(b.created_at) - new Date(a.created_at)
