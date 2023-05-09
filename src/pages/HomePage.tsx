@@ -14,7 +14,6 @@ const HomePage = () => {
   const debounced = useDebounce(search);
   const { data, isError, isLoading } = useSearchUsersQuery(debounced, {
     skip: debounced.length < 3,
-    refetchOnFocus: true,
   });
   const [fetchRepos, { isLoading: areReposLoading, data: repos }] =
     useLazyGetUserReposQuery();

@@ -6,7 +6,7 @@ import useActions from "../hooks/actions";
 import useAppSelector from "../hooks/redux";
 
 const RepoCard = ({ repo }: { repo: IRepo }) => {
-  const { addFavourite, removeFavourite } = useActions();
+  const { addFavourite } = useActions();
 
   const { favourites } = useAppSelector((state) => state.githubFavourites);
 
@@ -22,16 +22,6 @@ const RepoCard = ({ repo }: { repo: IRepo }) => {
       setIsFav(true);
     },
     [addFavourite, repo]
-  );
-
-  const handlerRemoveFavourite = useCallback(
-    (event: React.MouseEvent<HTMLButtonElement>) => {
-      event.preventDefault();
-
-      removeFavourite(repo.id);
-      setIsFav(false);
-    },
-    [removeFavourite, repo.id]
   );
 
   return (
@@ -57,13 +47,9 @@ const RepoCard = ({ repo }: { repo: IRepo }) => {
       )}
 
       {isFav && (
-        <button
-          onClick={handlerRemoveFavourite}
-          type="button"
-          className="py-2 px-4 bg-red-500 rounded hover:shadow-md transition-all"
-        >
-          Remove
-        </button>
+        <div className="flex items-center py-2 px-4 border-amber-400 border-2  rounded hover:shadow-md transition-all">
+          Favourite
+        </div>
       )}
     </div>
   );
