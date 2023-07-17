@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
-import useAppSelector from "../hooks/redux";
-import useActions from "../hooks/actions";
+import useAppSelector from "@/hooks/redux";
+import useActions from "@/hooks/actions";
 
 const FavouritesPage = () => {
   const { favourites } = useAppSelector((state) => state.githubFavourites);
@@ -29,7 +29,9 @@ const FavouritesPage = () => {
           >
             <div>
               <p className="font-bold">{item.name}</p>
-              <a href={item.url}>{item.url}</a>
+              <a href={item.url} target="_blank" rel="noreferrer">
+                {item.url}
+              </a>
             </div>
             <button
               onClick={() => handlerRemoveFavourite(item.id)}

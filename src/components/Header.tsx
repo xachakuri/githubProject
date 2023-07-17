@@ -11,7 +11,7 @@ const Header = () => {
             <Link to="/" className="mr-2 text-xl">
               Home
             </Link>
-            <Link to="/favourites" className="text-xl">
+            <Link to="/favourites" className="text-xl mr-2">
               Favourites
             </Link>
           </span>

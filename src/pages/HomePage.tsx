@@ -3,10 +3,10 @@ import React, { useCallback, useEffect, useState } from "react";
 import {
   useLazyGetUserReposQuery,
   useSearchUsersQuery,
-} from "../store/github/github.api";
+} from "@/store/github/github.api";
 
-import useDebounce from "../hooks/debounce";
-import RepoCard from "../components/RepoCard";
+import useDebounce from "@/hooks/debounce";
+import RepoCard from "@/components/RepoCard";
 
 const HomePage = () => {
   const [search, setSearch] = useState("");

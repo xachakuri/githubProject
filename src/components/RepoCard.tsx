@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 
-import { IRepo } from "../models/models";
+import { IRepo } from "@/models/models";
 import formattedDate from "../utils/formattedDate";
 import useActions from "../hooks/actions";
 import useAppSelector from "../hooks/redux";
